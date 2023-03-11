@@ -1,26 +1,64 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <nav class="navbar is-dark">
+
+      <div class="navbar-brand">
+        <router-link to="/" class="navbar-item">
+          <strong>ShipShop</strong>
+        </router-link>
+
+        <a href="#" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu" id="navbar-menu">
+        <div class="navbar-end">
+
+          <router-link to="/phone"></router-link>
+          <router-link to="/electronics"></router-link>
+          
+          <div class="navbar-item">
+            <div class="buttons">
+              <router-link to="/log-in" class="button is-light">Log in</router-link>
+              <router-link to="/cart" class="button is-success">
+                <span class="icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </span>
+                <span>Cart</span>
+              </router-link>
+
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+
+    </nav>
+
+
+    <section class="section">
+
+    </section>
+  
+    <footer class="footer">
+      <p class="has-text-centered">Copyright (c) 2023</p>
+    </footer>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

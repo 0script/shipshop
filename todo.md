@@ -2,4 +2,4 @@
 
 2. install and setup vuejs done
 
-3. 
+3. set up base template
