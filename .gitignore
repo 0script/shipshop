@@ -1,4 +1,10 @@
 # created by virtualenv automatically
+
 /bin
 /lib
-pyenv.cfg
+pyvenv.cfg
+
+frontend/node_modules
+frontend/jsconfig.json
+frontend/*.config.js
+frontend/package-lock.json
