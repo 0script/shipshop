@@ -4,7 +4,5 @@
 /lib
 pyvenv.cfg
 
-frontend/node_modules
-frontend/jsconfig.json
-frontend/*.config.js
-frontend/package-lock.json
+shipshop-ux/node_modules
+shipshop-ux/package-lock.json

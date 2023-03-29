@@ -7,25 +7,36 @@
           <strong>ShipShop</strong>
         </router-link>
 
-        <a href="#" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+        <a 
+          href="#" 
+          class="navbar-burger" 
+          aria-label="menu" 
+          aria-expanded="false" 
+          data-target="navbar-menu"
+          @click="showMobileMenu = !showMobileMenu"
+        >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
 
-      <div class="navbar-menu" id="navbar-menu">
+      <div 
+        class="navbar-menu" 
+        id="navbar-menu"
+        :class="{'is-active':showMobileMenu}"
+      >
         <div class="navbar-end">
 
-          <router-link to="/phone"></router-link>
-          <router-link to="/electronics"></router-link>
+          <router-link to="/phone" class="navbar-item">Phone</router-link>
+          <router-link to="/electronics" class="navbar-item">Computer</router-link>
           
           <div class="navbar-item">
             <div class="buttons">
               <router-link to="/log-in" class="button is-light">Log in</router-link>
               <router-link to="/cart" class="button is-success">
                 <span class="icon">
-                  <i class="fas fa-shopping-cart"></i>
+                  <font-awesome-icon icon="fa-solid fa-cart-shopping" />
                 </span>
                 <span>Cart</span>
               </router-link>
@@ -37,14 +48,10 @@
 
         </div>
       </div>
-
-
-
     </nav>
 
-
     <section class="section">
-
+      <router-view></router-view>
     </section>
   
     <footer class="footer">
@@ -54,11 +61,17 @@
 </template>
 
 <script>
-
-export default {
-  name: 'App',
-}
+  export default {
+    name: 'App',
+    data(){
+      return{
+        showMobileMenu:false,
+      }
+    }
+  }
 </script>
 
-<style>
+
+<style lang="scss">
+  @import '../node_modules/bulma';
 </style>
