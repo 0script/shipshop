@@ -42,22 +42,19 @@ class Product(models.Model):
     
     def get_image(self):
         if self.image:
-            # return 'http://localhost:8000/'+socket.gethostbyname(socket.gethostname())+self.image.url
-            return 'http://192.168.143:8000/'+self.image.url
+            return 'http://localhost:8000/'+self.image.url
         return ''
 
     def get_thumbnail(self):
         hostname=socket.gethostname()   
         IPAddr=socket.gethostbyname(hostname)   
         if self.thumbnail:
-            # return 'http://localhost:8000/'+self.thumbnail.url
-            return 'http://192.168.122.143:8000/'+self.thumbnail.url
+            return 'http://localhost:8000/'+self.thumbnail.url
         else:
             if self.image:
                 self.thumbnail=self.make_thumbnail(self.image)
                 self.save()
-                # return 'http://localhost:8000/'+self.thumbnail.url
-                return 'http://192.168.122.143:8000/'+self.thumbnail.url
+                return 'http://localhost:8000/'+self.thumbnail.url
             else:
                 return ''
     
@@ -69,18 +66,5 @@ class Product(models.Model):
         thumb_io=BytesIO()
         img.save(thumb_io,'JPEG',quality=85)
         thumbnail=File(thumb_io,name=image.name)
-        # try:
-        #     img=Image.open(image)
-        #     # print(img)
-        #     # return img.thumbnail(size)
-        #     # img=Image.open(image)
-        #     img.convert('RGB')
-        #     thumbnail=img.thumbnail(size)
 
-        #     #thumb_io=BytesIO()
-        #     #thumbnail=File(thumb_io,name=image.name)
-        # except IOError:
-        #     print('ERROR DURRIN THUMBNAIL CREATION')
-        #     pass
-        
         return thumbnail
