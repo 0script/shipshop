@@ -2,22 +2,22 @@
 
 2. install and setup vuejs done
 
-3. install and setup vuejs font-awesome
+3. install and setup vuejs font-awesome done
 
 4. set up base template done    
 
-5. create django app and models for products
+5. create django app and models for products done
 
-6. create serialized 
+6. create serialized  done
 
-7. create simple front page 
+7. create simple front page  done
 
-8. view a product 
-    * create viewset in django 
-    * create vue page for showing product
-    * Add link to detail page
+8. view a product done
+    * create viewset in django done 
+    * create vue page for showing product done
+    * Add link to detail page done
 
-9. se opp vuex / state
+9. set opp vuex / state done
 
 10. make it possible to add ot cart
     * add functionality to vuex
