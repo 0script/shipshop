@@ -7,21 +7,12 @@
                     {{ category.name }}
                 </h2>
             </div>
-
-            <div 
-                class="column is-3"
+            <products-list
                 v-for="product in category.products"
                 v-bind:key="product.id"
+                v-bind:product="product"
             >
-                <div class="box">
-                <figure class="image mb-4">
-                    <img v-bind:src="product.get_thumbnail">
-                </figure>
-                <h3 class="is-size-4">{{ product.name }}</h3>
-                <p class="is-size-6 has-text-grey">Rwf{{ product.price }}</p>
-                <router-link v-bind:to="product.get_absolute_url" class="button is-dark mt-4">View Detail</router-link>
-                </div>
-            </div>
+            </products-list>
 
         </div>
     </div>
@@ -31,9 +22,13 @@
 
     import axios from 'axios'
     import {toast} from 'bulma-toast'
+    import ProductsList from '@/components/ProductsList.vue'
 
     export default{
         name:'CategoryView',
+        components:{
+            ProductsList
+        },
         data(){
             return{
                 category:{
@@ -43,6 +38,13 @@
         },
         mounted(){
             this.getCategory()
+        },
+        watch:{
+            $route(to,from){
+                if(to.name==='category'){
+                    this.getCategory()
+                }
+            }
         },
         methods:{
             async getCategory(){
