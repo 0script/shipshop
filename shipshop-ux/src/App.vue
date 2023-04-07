@@ -29,7 +29,7 @@
         <div class="navbar-end">
 
           <router-link to="/phone" class="navbar-item">Phone</router-link>
-          <router-link to="/electronics" class="navbar-item">Computer</router-link>
+          <router-link to="/computer" class="navbar-item">Computer</router-link>
           
           <div class="navbar-item">
             <div class="buttons">
