@@ -19,13 +19,14 @@
 
 9. set opp vuex / state done
 
-10. make it possible to add ot cart
+10. make it possible to add ot cart done
     * add functionality to vuex
     * initialize store in app.vue
     * add button to product page
     * show a toast message
 
-11. make it possible to sign up 
+11. make it possible to view category 
+    1. create product components
 
 12. make it possible to log in
 
