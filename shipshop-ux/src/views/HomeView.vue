@@ -56,6 +56,8 @@ export default {
   },
   mounted(){
     this.getLatestProducts()
+
+    document.title='ShipShop : Home'
   },
   methods:{
     getLatestProducts(){

@@ -56,6 +56,8 @@
                     .get(`api/v1/products/${category_slug}/${product_slug}`)
                     .then(response=>{
                         this.product=response.data
+
+                        document.title='ShipShop:'+this.product.name
                     })
                     .catch(error=>{
                         console.log(error)
