@@ -10,13 +10,13 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faUserSecret,faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret,faCartShopping,faSearch,faSearchPlus } from '@fortawesome/free-solid-svg-icons'
 
 import axios from 'axios'
 axios.defaults.baseURL='http://localhost:8000'
 
 /* add icons to the library */
-library.add(faUserSecret,faCartShopping)
+library.add(faUserSecret,faCartShopping,faSearch,faSearchPlus)
 
 
 createApp(App)

@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductView from '../views/ProductView.vue'
 import CategoryView from '../views/CategoryView.vue'
+import SearchView from '../views/SearchView.vue'
 
 const routes = [
   {
@@ -19,6 +20,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
+    path: '/search',
+    name: 'search',
+    component: SearchView,
+    //props: route => ({ query: route.query.q })
+  },
+  {
     path:'/:category_slug/:product_slug',
     name:'product',
     component:ProductView
@@ -27,7 +34,8 @@ const routes = [
     path:'/:category_slug',
     name:'category',
     component:CategoryView
-  }
+  },
+  
 ]
 
 const router = createRouter({
