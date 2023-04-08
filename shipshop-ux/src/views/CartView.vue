@@ -19,15 +19,14 @@
                         </tr>
                     </thead>
                     <tbody>
+
                         <cart-item
                             v-for="item in cart.items"
                             v-bind:key="item.product.id"
                             :initialItem="item"
-                        >
+                            v-on:removeFromCart="removeFromCart"
+                            >
                         </cart-item>
-                        <!-- <div v-for="item in cart.items" v-bind:key="item.product.id">
-                            {{ item.product.name }}
-                        </div> -->
                     </tbody>
                 </table>
                 <p v-else>You don't have any item in you cart !!!</p>
@@ -64,14 +63,6 @@
         },
         mounted(){
             this.cart=this.$store.state.cart
-
-            console.log('here items')
-            this.display();
-            // for(let c in this.cart.items){
-            //     console.log(c)
-            // }
-
-            console.log('mounted')
         },
         computed:{
             cartTotalLength(){
@@ -86,8 +77,8 @@
             }
         },
         methods:{
-            display(){
-                console.log(this.cart.items)
+            removeFromCart(item){
+                this.cart.items=this.cart.items.filter(i=>i.product.id !== item.product.id)
             }
         }
     }
