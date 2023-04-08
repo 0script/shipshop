@@ -26,6 +26,26 @@
         id="navbar-menu"
         :class="{'is-active':showMobileMenu}"
       >
+
+        <div class="navbar-start">
+          <div class="navbar-item">
+            <form method="get" action="/#/search">
+              <div class="field has-addons">
+                <div class="control">
+                  <input type="text" class="input is-normal" placeholder="What are you lookning for" name="q" />
+                </div>
+                <div class="control">
+                  <button class="button is-success">
+                    <span class="icon">
+                      <font-awesome-icon icon="fa-solid fa-search" />
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
         <div class="navbar-end">
 
           <router-link to="/phone" class="navbar-item">Phone</router-link>

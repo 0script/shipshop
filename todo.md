@@ -25,9 +25,11 @@
     * add button to product page
     * show a toast message
 
-11. make it possible to view category 
+11. make it possible to view category done
     1. create product components
 
-12. make it possible to log in
+12. Add search functionality
 
-13. create a simple my account page
+13. make it possible to log in
+
+14. create a simple my account page
