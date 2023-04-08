@@ -7,8 +7,15 @@
                 </h1>
                 <h2 class="is-size-5 has-text-grey">
                     Search Term : "{{ query }}"
+
                 </h2>
+                <h3 class="is-size-4 hast-text-black"
+                    v-if="products.length===0"
+                >
+                    No Result For {{ query }}
+                </h3>
             </div>
+
 
             <products-list
                 v-for="product in products"
