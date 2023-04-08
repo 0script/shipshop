@@ -30,6 +30,9 @@
 
 12. Add search functionality
 
-13. make it possible to log in
+13. Make it possible to view cart done 
+    * create cart item component 
+
+13. Add and remove product in cart 
 
 14. create a simple my account page

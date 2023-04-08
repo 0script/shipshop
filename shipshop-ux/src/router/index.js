@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import ProductView from '../views/ProductView.vue'
 import CategoryView from '../views/CategoryView.vue'
 import SearchView from '../views/SearchView.vue'
+import CartView from '../views/CartView.vue'
 
 const routes = [
   {
@@ -23,6 +24,12 @@ const routes = [
     path: '/search',
     name: 'search',
     component: SearchView,
+    //props: route => ({ query: route.query.q })
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: CartView,
     //props: route => ({ query: route.query.q })
   },
   {
