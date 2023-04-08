@@ -6,6 +6,7 @@ import CategoryView from '../views/CategoryView.vue'
 import SearchView from '../views/SearchView.vue'
 import CartView from '../views/CartView.vue'
 import SignUpView from '../views/SignUpView.vue'
+import LogInView from '../views/LogInView.vue'
 
 const routes = [
   {
@@ -26,13 +27,19 @@ const routes = [
     name: 'sign-up',
     component: SignUpView,
     //props: route => ({ query: route.query.q })
+  },  
+  {
+    path: '/log-in',
+    name: 'log-in',
+    component: LogInView,
+    //props: route => ({ query: route.query.q })
   },
   {
     path: '/search',
     name: 'search',
     component: SearchView,
     //props: route => ({ query: route.query.q })
-  },
+  },,
   {
     path: '/cart',
     name: 'cart',

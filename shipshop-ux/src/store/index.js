@@ -18,6 +18,14 @@ export default createStore({
       }else{
         localStorage.setItem('cart',JSON.stringify(state.cart))
       }
+
+      if(localStorage.getItem('token')){
+        state.toke=localStorage.getItem('token')
+        state.isAuthenticated=true
+      }else{
+        state.toke=''
+        state.isAuthenticated=false
+      }
     },
     setIsLoading(state,status){
       state.isLoading=status
@@ -32,6 +40,14 @@ export default createStore({
       }
 
       localStorage.setItem('cart',JSON.stringify(state.cart))
+    },
+    setToken(state,token){
+      state.token=token
+      state.isAuthenticated=true
+    },
+    removeToken(state){
+      state.token=''
+      state.isAuthenticated=false
     }
   },
   actions: {
