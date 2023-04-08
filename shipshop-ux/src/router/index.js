@@ -7,6 +7,8 @@ import SearchView from '../views/SearchView.vue'
 import CartView from '../views/CartView.vue'
 import SignUpView from '../views/SignUpView.vue'
 import LogInView from '../views/LogInView.vue'
+import MyAccountView from '../views/MyAccountView.vue'
+import store from '@/store'
 
 const routes = [
   {
@@ -27,11 +29,20 @@ const routes = [
     name: 'sign-up',
     component: SignUpView,
     //props: route => ({ query: route.query.q })
-  },  
+  },
   {
     path: '/log-in',
     name: 'log-in',
     component: LogInView,
+    //props: route => ({ query: route.query.q })
+  },
+  {
+    path: '/my-account',
+    name: 'my-account',
+    component: MyAccountView,
+    meta:{
+      requireLogin:true
+    }
     //props: route => ({ query: route.query.q })
   },
   {
@@ -62,6 +73,15 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes
+})
+
+router.beforeEach((to,from,next)=>{
+
+  if(to.matched.some(record=>record.meta.requireLogin) && !store.state.isAuthenticated){
+    next({name:'log-in',query:{to:path}})
+  }else{
+    next()
+  }
 })
 
 export default router
