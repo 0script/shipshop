@@ -132,8 +132,8 @@
                 first_name:'',
                 last_name:'',
                 email:'',
-                phones:'',
-                addresse:'',
+                phone:'',
+                address:'',
                 place:'',
                 errors:[]
             }
@@ -161,7 +161,32 @@
                 return item.quantity * item.product.price
             },
             submitForm(){
+                
+                this.errors=[]
 
+                if(this.first_name===''){
+                    this.errors.push('First Name is required !')
+                }
+
+                if(this.last_name===''){
+                    this.errors.push('Last Name is required !')
+                }
+
+                if(this.email===''){
+                    this.errors.push('Email is required !')
+                }
+
+                if(this.phone===''){
+                    this.errors.push('Phone number is required !')
+                }
+
+                if(this.address===''){
+                    this.errors.push('Address is required !')
+                }
+
+                if(this.place===''){
+                    this.errors.push('Place is required !')
+                }
             }
         }
     }

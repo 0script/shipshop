@@ -9,6 +9,7 @@ import SignUpView from '../views/SignUpView.vue'
 import LogInView from '../views/LogInView.vue'
 import MyAccountView from '../views/MyAccountView.vue'
 import CheckoutView from '../views/CheckoutView.vue'
+import SuccessView from '../views/SuccessView.vue'
 
 import store from '@/store'
 
@@ -51,6 +52,15 @@ const routes = [
     path: '/cart/checkout',
     name: 'checkout',
     component: CheckoutView,
+    meta:{
+      requireLogin:true
+    }
+    //props: route => ({ query: route.query.q })
+  },
+  {
+    path: '/cart/success',
+    name: 'success',
+    component: SuccessView,
     meta:{
       requireLogin:true
     }
