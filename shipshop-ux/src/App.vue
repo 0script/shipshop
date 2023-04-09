@@ -53,7 +53,13 @@
           
           <div class="navbar-item">
             <div class="buttons">
-              <router-link to="/log-in" class="button is-light">Log in</router-link>
+              <router-link v-if="$store.state.isAuthenticated" to="/my-account" class="button is-light">
+                My Account
+              </router-link>
+              <router-link v-else to="/log-in" class="button is-light">
+                Log In
+              </router-link>
+
               <router-link to="/cart" class="button is-success">
                 <span class="icon">
                   <font-awesome-icon icon="fa-solid fa-cart-shopping" />
@@ -114,6 +120,7 @@
     },
     mounted(){
       this.cart=this.$store.state.cart
+      console.log(this.$store.state.isAuthenticated)
     },
     computed:{
       cartTotalLength(){

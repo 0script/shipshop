@@ -103,7 +103,7 @@
 
                             console.log(JSON.stringify(error.response.data))
                         }else if(error.message){
-                            this.error.push('Something went wrong . Please try again')
+                            this.errors.push('Something went wrong . Please try again')
 
                             console.log(JSON.stringify(error))
                         }
