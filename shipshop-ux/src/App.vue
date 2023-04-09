@@ -8,7 +8,6 @@
         </router-link>
 
         <a 
-          href="#" 
           class="navbar-burger" 
           aria-label="menu" 
           aria-expanded="false" 

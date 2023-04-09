@@ -25,14 +25,30 @@
     * add button to product page
     * show a toast message
 
-11. make it possible to view category done
+11. make it possible to view category DONE 
     1. create product components
 
 12. Add search functionality
 
-13. Make it possible to view cart done 
+13. Make it possible to view cart DONE  
     * create cart item component 
 
-13. Add and remove product in cart 
+14. Add and remove product in cart DONE 
 
-14. create a simple my account page
+15. sign up functionality DONE  
+
+16. log in functionality DONE 
+
+17. create my account page DONE 
+
+18. checkout functionality              
+
+19. create success page 
+
+20. get order on my-account page 
+
+21. check error before deployment
+
+22. deploy 
+
+23. check erro after deployment 

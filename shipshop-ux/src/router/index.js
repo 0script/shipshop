@@ -8,6 +8,8 @@ import CartView from '../views/CartView.vue'
 import SignUpView from '../views/SignUpView.vue'
 import LogInView from '../views/LogInView.vue'
 import MyAccountView from '../views/MyAccountView.vue'
+import CheckoutView from '../views/CheckoutView.vue'
+
 import store from '@/store'
 
 const routes = [
@@ -40,6 +42,15 @@ const routes = [
     path: '/my-account',
     name: 'my-account',
     component: MyAccountView,
+    meta:{
+      requireLogin:true
+    }
+    //props: route => ({ query: route.query.q })
+  },
+  {
+    path: '/cart/checkout',
+    name: 'checkout',
+    component: CheckoutView,
     meta:{
       requireLogin:true
     }
