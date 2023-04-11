@@ -50,6 +50,7 @@ export default {
   },
   methods:{
     getLatestProducts(){
+      
       axios
         .get('/api/v1/latest-products')
         .then(response=>{

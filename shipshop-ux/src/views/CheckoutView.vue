@@ -103,9 +103,10 @@
                     </div>
                     <hr />
 
-                    <div id="card-element mb-5"></div>
                     <template v-if="cartTotalLength">
-                        <button class="button is-dark" @click="submitForm">Pay With Stripe</button>
+                        <button class="button is-dark m-3"  @click="submitForm('e-pay')">Online Payment</button>
+                        <button class="button is-dark m-3" @click="submitForm('order')">Place Order Pay On Delivery</button>
+
                     </template>
                 </div>
 
@@ -124,11 +125,8 @@
         name:'Checkout',
         data(){
             return{
-                cart:{
-                    items:[]
-                },
-                stripe:{},
-                card:{},
+                cart:{items:[]},
+                token:'',
                 first_name:'',
                 last_name:'',
                 email:'',
@@ -140,6 +138,7 @@
         },
         mounted(){
             this.cart=this.$store.state.cart
+            this.token=this.$store.state.token
         },
         computed:{
             cartTotalLength(){
@@ -160,9 +159,13 @@
             getItemTotal(item){
                 return item.quantity * item.product.price
             },
-            submitForm(){
+            submitForm(mode){
                 
                 this.errors=[]
+
+                if(mode==='e-pay'){
+                    this.errors.push('Sorry !! Online payment is not available !')
+                }
 
                 if(this.first_name===''){
                     this.errors.push('First Name is required !')
@@ -187,6 +190,70 @@
                 if(this.place===''){
                     this.errors.push('Place is required !')
                 }
+
+                if(!this.errors.length){
+
+                    this.$store.commit('setIsLoading',true)
+
+                    this.processOrder()
+                }
+
+            },
+            async processOrder(){
+
+                const items=[]
+                
+                for (let i = 0; i < this.cart.items.length; i++) {
+                    const item = this.cart.items[i]
+                    const obj = {
+                        product: item.product.id,
+                        quantity: item.quantity,
+                        price: item.product.price * item.quantity
+                    }
+                    items.push(obj)
+                }
+
+                console.log(items)
+
+                const data={
+                    'first_name':this.first_name,
+                    'last_name':this.last_name,
+                    'email':this.email,
+                    'address':this.address,
+                    'place':this.place,
+                    'phone':this.phone,
+                    'items':items,
+                }
+
+
+                console.log('data to send')
+                console.log(data.items)
+
+                await axios
+                    .post('/api/v1/checkout/',data)
+                    .then(response=>{
+                        this.$store.commit('clearCart')
+                        this.$router.push('/cart/success')
+                    })
+                    .catch(error=>{
+                        this.errors.push('Error while processing order ! Try Again !')
+                        console.log(error)
+                    })
+                
+                // await axios
+                //     .get('/api/v1/order_token/')
+                //     .then(response=>{
+                //         // this.$store.commit('clearCart')
+                //         console.log(response.data.token)
+                //         this.token
+
+                //     })
+                //     .catch(error=>{
+                //         this.errors.push('Error while processing order ! Try Again !')
+                //         console.log(error)
+                //     })
+                
+                this.$store.commit('setIsLoading',false)
             }
         }
     }

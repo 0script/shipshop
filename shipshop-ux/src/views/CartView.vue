@@ -37,7 +37,7 @@
                 <h2 class="subtitle">Summary</h2>
                 <strong>Rwf {{ cartTotalPrice }}</strong> ,{{ cartTotalLength }} items
                 <hr />
-                <router-link to="cart/checkout" class="button is-dartk">Checkout</router-link>
+                <router-link to="/cart/checkout" class="button is-dartk">Checkout</router-link>
                 </div>
             </div>
     </div>
