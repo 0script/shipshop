@@ -48,9 +48,7 @@ INSTALLED_APPS = [
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = False
-# CORS_ALLOWED_ORIGINS=[
-#     'http://localhost:8080'
-# ]
+CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -87,22 +85,23 @@ WSGI_APPLICATION = 'shipshop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'neondb',
-        'USER': 'shipshopdubai',
-        'PASSWORD': 'x4kruMGSF3Qv',
-        'HOST': 'ep-jolly-frost-286375.us-east-2.aws.neon.tech',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'neondb',
+#         'USER': 'shipshopdubai',
+#         'PASSWORD': 'x4kruMGSF3Qv',
+#         'HOST': 'ep-jolly-frost-286375.us-east-2.aws.neon.tech',
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

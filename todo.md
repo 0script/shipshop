@@ -41,11 +41,13 @@
 
 17. create my account page DONE 
 
-18. checkout functionality              
+18. checkout page DONE            
 
-19. create success page 
+19. create success page DONE
 
 20. get order on my-account page 
+
+21. handle order no payment back -> front 
 
 21. check error before deployment
 

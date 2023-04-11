@@ -42,7 +42,7 @@ class Product(models.Model):
     
     def get_image(self):
         if self.image:
-            return self.image.url
+            return 'http://localhost:8000/'+self.image.url
         return ''
 
     def get_thumbnail(self):
