@@ -96,8 +96,8 @@ DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'neondb',
-#         'USER': 'shipshopdubai',
-#         'PASSWORD': 'x4kruMGSF3Qv',
+#         'USER': 'removing creds',
+#         'PASSWORD': 'fucking trash database not even working ',
 #         'HOST': 'ep-jolly-frost-286375.us-east-2.aws.neon.tech',
 #         'PORT': '5432',
 #     }
