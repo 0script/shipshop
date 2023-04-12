@@ -4,6 +4,35 @@ from .models import Order,OrderItem
 
 from product.serializers import ProductSerializer
 
+class MyOrderItemSerializer(serializers.ModelSerializer):
+    product=ProductSerializer()
+
+    class Meta:
+        model=OrderItem 
+        fields=(
+            'product',
+            'price',
+            'quantity',
+        )
+
+
+class MyOrderSerializer(serializers.ModelSerializer):
+    items=MyOrderItemSerializer(many=True)
+    class Meta:
+        model=Order
+        fields=(
+            'id',
+            'first_name',
+            'last_name',
+            'email',
+            'address',
+            'place',
+            'phone',
+            'items',
+            'paid_amount'
+        )
+    
+
 class OrderItemSerializer(serializers.ModelSerializer):
     class Meta:
         model=OrderItem 

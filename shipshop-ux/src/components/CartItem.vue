@@ -24,9 +24,6 @@
                 item:this.initialItem
             }
         },
-        mounted(){
-            console.log(this.item.product.name)
-        },
         methods:{
             getItemTotal(){
                 return this.item.quantity * this.item.product.price

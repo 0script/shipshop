@@ -117,7 +117,6 @@
     },
     mounted(){
       this.cart=this.$store.state.cart
-      console.log(this.$store.state.isAuthenticated)
     },
     computed:{
       cartTotalLength(){

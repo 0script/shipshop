@@ -1,7 +1,16 @@
 <template>
   <div class="home container">
 
-    <section class="hero is-medium is-dark mb-6">
+    <section  
+      class="hero is-medium is-dark mb-6" 
+      :style="{
+        'background-image':'url(https://www.mendix.com/wp-content/uploads/iStock-1309800161-scaled.jpg)',
+        'background-repeat': 'no-repeat',
+        'background-size':'contain',
+        'background-attachment': 'fixed',
+        'background-position': 'center' 
+        }"
+    >
       <div class="hero-body has-text-centered">
         <p class="title mb-6">
           Welcome to shipshop
