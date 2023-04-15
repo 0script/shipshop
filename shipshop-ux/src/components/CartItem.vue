@@ -17,7 +17,10 @@
     export default{
         name:'CartItem',
         props:{
-            initialItem:Object
+            initialItem: {
+                type: Object,
+                default: {}
+            }
         },
         data(){
             return{
