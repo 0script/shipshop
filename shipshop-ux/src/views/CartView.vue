@@ -20,6 +20,14 @@
                     </thead>
                     <tbody>
 
+                        <!-- <div
+                            v-for="item in cart.items"
+                            :key="item.product.id"
+                        >
+                    
+                            <cart-item :initialItem="item"></cart-item>
+
+                        </div> -->
                         <cart-item
                             v-for="item in cart.items"
                             v-bind:key="item.product.id"

@@ -49,6 +49,7 @@
 
           <router-link to="/phone" class="navbar-item">Phone</router-link>
           <router-link to="/computer" class="navbar-item">Computer</router-link>
+          <router-link to="/accessory" class="navbar-item">Accessory</router-link>
           
           <div class="navbar-item">
             <div class="buttons">
